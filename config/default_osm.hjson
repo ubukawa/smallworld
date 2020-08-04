@@ -1,0 +1,37 @@
+{
+  minzoom: 0
+  maxzoom: 5
+  projection: 3857
+  host: xxx
+  port: 5432
+  dbname=base
+  user=test
+  password=ddd
+  srcs: [
+    {
+      sql: "select * from osm_planet_landuse_natural_medium_500"
+      layer: nature
+      minzoom: 5 
+      maxzoom: 5
+      projection: 3857
+    }
+    {
+      sql: "select * from osm_planet_places"
+      layer: osm_place
+      minzoom: 5 
+      maxzoom: 5
+      projection: 3857
+    }
+    {
+      sql: "select * from osm_planet_major_roads_500"
+      layer: hq_bnd
+      minzoom: 3 
+      maxzoom: 4
+      projection: 3857
+    }
+   ]
+  ogr2ogrPath: ogr2ogr
+  tippecanoePath: tippecanoe
+  dstDir: zxy
+}
+
