@@ -40,12 +40,12 @@ for (const src of srcs) {
   nOpenFiles++
   const parser = new Parser()
     .on('data', f => {
+      f = preprocessProperties(f)
       f.tippecanoe = {
         layer: src.layer,
         minzoom: src.minzoom,
         maxzoom: src.maxzoom,
       }
-      f = preprocessProperties(f)
       downstream.write(`\x1e${JSON.stringify(f)}\n`)
     })
     .on('finish', () => {
