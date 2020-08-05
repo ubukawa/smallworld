@@ -16,17 +16,10 @@
       projection: 3857
     }
     {
-      sql: "select * from osm_planet_places"
-      layer: osm_place
-      minzoom: 5 
-      maxzoom: 5
-      projection: 3857
-    }
-    {
-      sql: "select * from osm_planet_major_roads_500"
-      layer: hq_bnd
+      sql: "select * from osm_planet_major_roads_500 WHERE z_order=1 OR z_order=3 OR z_order=5 OR z_order=7"
+      layer: road
       minzoom: 3 
-      maxzoom: 4
+      maxzoom: 5
       projection: 3857
     }
    ]
